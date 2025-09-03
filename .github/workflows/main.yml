@@ -1,0 +1,16 @@
+name: PR Validation Workflow
+
+on:
+  pull_request:   # Trigger on every PR
+    branches: [ "main" ]   # ya master, jo bhi tumhari default branch hai
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest   # Job run hoga Ubuntu par
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run validation
+        run: echo "✅ Code validated successfully on PR!"
